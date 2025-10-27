@@ -1,28 +1,26 @@
-import { useState } from 'react'
+import React from 'react';
+import HeroSection from './components/HeroSection';
+import FeatureGrid from './components/FeatureGrid';
+import TemplateShowcase from './components/TemplateShowcase';
+import PreviewEditor from './components/PreviewEditor';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-gray-900">
+      <HeroSection />
+      <FeatureGrid />
+      <TemplateShowcase />
+      <PreviewEditor />
+      <footer className="border-t border-gray-200 bg-white">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-8 sm:flex-row">
+          <p className="text-sm text-gray-500">© {new Date().getFullYear()} Visual Dashboard Builder</p>
+          <nav className="flex items-center gap-4 text-sm text-gray-600">
+            <a href="#templates" className="hover:text-gray-900">Templates</a>
+            <a href="#preview" className="hover:text-gray-900">Editor</a>
+            <a href="#" className="hover:text-gray-900">Pricing</a>
+          </nav>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
-
-export default App
